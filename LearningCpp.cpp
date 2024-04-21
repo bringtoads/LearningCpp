@@ -172,14 +172,44 @@ int main(int arg, char* argv[])
 	//s2.print();
 	//s3.getLast();
 
-	Course comp400("COMP 4300",1); 
-	comp400.loadFromFile("students.txt");
+	//Course comp400("COMP 4300",1); 
+	//comp400.loadFromFile("students.txt");
 	/*comp400.addStudents(s1);
 	comp400.addStudents(s2);
 	comp400.addStudents(s3);
 	comp400.addStudents(Student("Test","test","test",4,11));*/
-	comp400.print();
+	
+	//comp400.print();
 	// s3 in this case is const so you can only call const functions of s3
 
+
+	 //stack
+	 //has predefined size(few megabytes)
+	 //very easy to run out of stack memory 
+	 //stack overflow meaning running out of stack memory 
+	 //local variables without ew are alloated o the stack by defult
+	 //program functio calls/return addresses are also allocated on the stack
+	 //stack is also know as static memory, can't do dynamic memory allocation
+	 //all stack memory allocation sizes need to be known at compile time
+	 //memory allocation which depends on runtime vairables(dynamic memory size) muust be heap allocated
+
+	
+	// stack and heap allocation 
+	//int val = 5;  //stack
+	//int* hval = new int; // heap
+	//*hval = 5;
+	//int a[5]; // stack
+	//int* ha = new int[5]; //heap 
+	//ha[3] = 10;
+	//MyClass c(args); // stack
+	// heap allocation with new 
+	// MyClass* hc = new MyClass(args);
+
+	// how to deallocate the heap
+	//int i = 6;
+	//int j = 10;
+	//Pt* p = new Pt(5, 4);
+	//int arr[2] = { 3,4 };
+	//delete p; //deleting memory from the heap
 	return 0;
 }
