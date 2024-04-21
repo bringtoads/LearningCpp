@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -66,6 +67,10 @@ public:
 		return m_lastName;
 	}
 
+	void loadFromFile(const string& fileName)
+	{
+
+	}
 	void print() const // const keyword won't let you change the object within the const function
 	{
 		cout << m_firstName << " " << m_middleName << " "  << m_lastName << " "  << m_id << " " << m_avg << "\n";
@@ -140,20 +145,20 @@ int main(int arg, char* argv[])
 	//	cout << b << "\n";
 	//}
 
-	Student s1;
-	Student s2("Ajaya", "Deep", "Sherestha", 1, 100);
+	//Student s1;
+	//Student s2("Ajaya", "Deep", "Sherestha", 1, 100);
 
-	// i want a const student 
-	const Student s3("Jane", "", "Doe", 123456, 99.99);
+	//// i want a const student 
+	//const Student s3("Jane", "", "Doe", 123456, 99.99);
 
 	//s2.print();
 	//s3.getLast();
 
 	Course comp400("COMP 4300",1); 
-	comp400.addStudents(s1);
+	/*comp400.addStudents(s1);
 	comp400.addStudents(s2);
 	comp400.addStudents(s3);
-	comp400.addStudents(Student("Test","test","test",4,11));
+	comp400.addStudents(Student("Test","test","test",4,11));*/
 	comp400.print();
 	// s3 in this case is const so you can only call const functions of s3
 
