@@ -67,10 +67,7 @@ public:
 		return m_lastName;
 	}
 
-	void loadFromFile(const string& fileName)
-	{
-
-	}
+	
 	void print() const // const keyword won't let you change the object within the const function
 	{
 		cout << m_firstName << " " << m_middleName << " "  << m_lastName << " "  << m_id << " " << m_avg << "\n";
@@ -107,6 +104,27 @@ public:
 		for (const auto& s : m_students)
 		{
 			s.print();
+		}
+	}
+
+	void loadFromFile(const string& fileName)
+	{
+		std::ifstream fin(fileName);
+		std::string firstName,middleName,lastName;
+		int id;
+		float avg;
+
+		
+		while (fin >> firstName)
+		{ 
+			// both are same 
+		/*	fin >> middleName;
+			fin >> lastName;
+			fin >> id; 
+			fin >> avg;*/
+			
+			fin >> middleName >> lastName >> id >> avg;
+			addStudents(Student(firstName, middleName, lastName, id, avg));
 		}
 	}
 };
@@ -155,6 +173,7 @@ int main(int arg, char* argv[])
 	//s3.getLast();
 
 	Course comp400("COMP 4300",1); 
+	comp400.loadFromFile("students.txt");
 	/*comp400.addStudents(s1);
 	comp400.addStudents(s2);
 	comp400.addStudents(s3);
