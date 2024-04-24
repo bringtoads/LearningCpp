@@ -205,9 +205,43 @@ int main(int arg, char* argv[])
 	//pp(b);
 	//pp(c);
 	
-	IntArray myArrry(10);
-	myArrry.set(4, 7);
-	myArrry.set(2, 712321);
-	myArrry.print();
+	//IntArray myArrry(10);
+	//myArrry.set(4, 7);
+	//myArrry.set(2, 712321);
+	//myArrry.print();
+
+
+	//april24th 
+	//input can be infinite don't know iteration
+	// average = sumation of total object/ no of objects
+	int n;
+	double sum = 0.0;
+	int count = 0;
+
+	std::cout << "Enter the numbers (enter a negative number to stop):\n";
+
+	while (true) {
+		std::cout << "Enter a number: ";
+		std::cin >> n;
+
+		if (n < 0) {
+			break;
+		}
+
+		sum += n;
+		count++;
+	}
+
+	if (count == 0) {
+		std::cout << "No numbers were entered. Exiting...\n";
+		return 1;
+	}
+
+	double average = sum / count;
+
+	std::cout << "Average: " << average << std::endl;
+
+	return 0;
+
 	return 0;
 }
